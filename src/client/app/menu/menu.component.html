@@ -1,0 +1,35 @@
+<div class="ui menu header">
+  <div class="ui container">
+    <div class="item">
+      <a [routerLink]="['/forums']" aria-label="Forums">
+        <h1><i class="icon hotel large black" aria-hidden="true"></i>
+
+          Delonix Regia Hotel</h1>
+
+      </a>
+    </div>
+
+
+    <!-- NgIf the user is logged in -->
+    <div class="item" *ngIf="auth.isLoggedIn()">
+      <button [routerLink]="['/staff-list']" class="ui basic black button">
+        <b>Staff</b>
+      </button>
+    </div>
+
+    
+    <!-- NgIf the user is logged out -->
+    <div class="item" *ngIf="auth.isLoggedOut()">
+      <button [routerLink]="['/register']" class="ui basic button">
+        <i class="add user icon blue button right floated" aria-hidden="true"></i>
+        Register
+      </button>
+    </div>
+
+
+    <!-- NgIf the user is logged in -->
+    <div class="right menu" *ngIf="auth.isLoggedIn()">
+      <button class="ui primary button logout" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>

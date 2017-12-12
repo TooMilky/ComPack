@@ -1,0 +1,50 @@
+<div class="edit-form-container">
+  <!-- Bottom will only shown if there is a staff -->
+  <div class="ui icon message" *ngIf="editStaff">
+    <i class="notched check green icon"></i>
+    <!-- When the notification icon is closed, newStaffs will be null to clear it -->
+    <i class="close icon" (click)="editStaff = null"></i>
+    <div class="content">
+      <div class="header">
+        Staff updated!
+      </div>
+      <p>Name: {{editStaff.title}}</p>
+    </div>
+  </div>
+
+
+
+  <form class="ui big form" #staffForm="ngForm" (ngSubmit)="updateStaff(staff._id)" [class.loading]="loading">
+    <div class="fields">
+      <div class="eight wide field">
+        <label>Title</label>
+        <input type="text" placeholder="PC Title" name="title" [(ngModel)]="staff.title">
+      </div>
+    </div>
+
+
+
+    <div class="field">
+      <label>Price</label>
+      <input type="text" placeholder="$" name="price" [(ngModel)]="staff.price">
+    </div>
+
+
+
+    <div class="equal width fields">
+      <div class="field">
+        <label>Description</label>
+        <textarea name="description" rows="10" cols="30" [(ngModel)]="staff.description"></textarea>
+      </div>
+    </div>
+
+
+
+    <div class="field">
+      <label>Photo URL</label>
+      <input type="text" placeholder="/profile/example.jpg" name="photo" [(ngModel)]="staff.photoUrl">
+    </div>
+
+    <button type="submit" class="ui submit large grey button right floated">Submit</button>
+  </form>
+</div>

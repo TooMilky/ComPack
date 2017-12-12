@@ -1,0 +1,57 @@
+<div class="edit-form-container">
+  <!-- Bottom will only shown if there is a forum -->
+  <div class="ui icon message" *ngIf="editForum">
+    <i class="notched check green icon"></i>
+    <!-- When the notification icon is closed, newForums will be null to clear it -->
+    <i class="close icon" (click)="editForum = null"></i>
+    <div class="content">
+      <div class="header">
+        Forum updated!
+      </div>
+      <p>Name: {{editForum.title}}</p>
+    </div>
+  </div>
+
+
+
+  <form class="ui big form" #forumForm="ngForm" (ngSubmit)="updateForum(forum._id)" [class.loading]="loading">
+    <div class="fields">
+      <div class="eight wide field">
+        <label>Title</label>
+        <input type="text" placeholder="PC Title" name="title" [(ngModel)]="forum.title">
+      </div>
+    </div>
+
+
+
+    <div class="field">
+      <label>Price</label>
+      <input type="text" placeholder="$" name="price" [(ngModel)]="forum.price">
+    </div>
+
+
+
+    <div class="field">
+      <label>Username</label>
+      <input type="text" value={{user.username}} name="username" [(ngModel)]="forum.byUser" readonly>
+    </div>
+
+
+
+    <div class="equal width fields">
+      <div class="field">
+        <label>Description</label>
+        <textarea name="description" rows="10" cols="30" [(ngModel)]="forum.description"></textarea>
+      </div>
+    </div>
+
+
+
+    <div class="field">
+      <label>Photo URL</label>
+      <input type="text" placeholder="/profile/example.jpg" name="photo" [(ngModel)]="forum.photoUrl">
+    </div>
+
+    <button type="submit" class="ui submit large grey button right floated">Submit</button>
+  </form>
+</div>

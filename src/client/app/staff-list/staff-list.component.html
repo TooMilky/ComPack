@@ -1,0 +1,17 @@
+<div class="ui container">
+
+    <div style="text-align:center">
+        <button [routerLink]="['/new-staff']" class="ui large black button" *ngIf="auth.isAdmin()">
+          <i class="add icon" aria-hidden="true"></i>
+          Add Staff
+        </button>
+      </div>
+
+      <br>
+
+
+  <div class="ui grid">
+    <app-staff *ngFor="let staff of staffs" [staff]="staff"></app-staff>
+  </div>
+
+</div>

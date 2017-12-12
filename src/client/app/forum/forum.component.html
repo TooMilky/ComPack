@@ -1,0 +1,37 @@
+<div class="ui card">
+  <div class="image">
+    <!-- If photoUrl is null, it won't set to show source property -->
+    <img [src]="forum?.photoUrl">
+  </div>
+
+  <div class="content">
+    <a [routerLink]="['/forum-detail', forum._id ]" class="header">{{forum.title}}</a>
+    <div class="price">
+      {{forum.price}}
+    </div>
+
+    <div class="username">
+      by {{forum.byUser}}
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="extra content">
+
+    <!-- Edit Button -->
+    <button [routerLink]="['/edit-forum', forum._id ]" class="ui icon button right floated" *ngIf="auth.isAdmin()">
+      <i class="edit icon"></i>
+    </button>
+
+    <!-- Delete Button -->
+    <button onClick="window.location.reload()" (click)="deleteForum(forum._id)" class="ui icon button right floated" *ngIf="auth.isAdmin()">
+      <i class="trash icon"></i>
+    </button>
+
+  </div>
+</div>

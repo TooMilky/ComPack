@@ -1,0 +1,35 @@
+<div class="ui card">
+        <div class="image">
+          <!-- If photoUrl is null, it won't set to show source property -->
+          <img [src]="staff?.photoUrl">
+        </div>
+      
+        <div class="content">
+          <a [routerLink]="['/staff-detail', staff._id ]" class="header">{{staff.title}}</a>
+          <div class="price">
+            {{staff.price}}
+          </div>
+      
+
+      
+        </div>
+      
+      
+      
+      
+      
+      
+        <div class="extra content">
+      
+          <!-- Edit Button -->
+          <button [routerLink]="['/edit-staff', staff._id ]" class="ui icon button right floated" *ngIf="auth.isAdmin()">
+            <i class="edit icon"></i>
+          </button>
+      
+          <!-- Delete Button -->
+          <button onClick="window.location.reload()" (click)="deleteStaff(staff._id)" class="ui icon button right floated" *ngIf="auth.isAdmin()">
+            <i class="trash icon"></i>
+          </button>
+      
+        </div>
+      </div>

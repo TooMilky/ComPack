@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+  <br>
+
+
+  <div style="text-align:center">
+    <h1 class="w3-jumbo">
+      <b>Welcome to</b>
+    </h1>
+  </div>
+
+  <div class="ui container">
+
+    <div class="w3-container w3-padding-32" id="share" style="text-align:center">
+      <h1 class="w3-border-bottom w3-border-dark-black w3-padding-16">
+        <b>Share your built custom PC here</b>
+
+
+
+        <div style="text-align:center">
+          <button [routerLink]="['/new']" class="ui basic button">
+            <i class="add icon" aria-hidden="true"></i>
+            Add Forum
+          </button>
+        </div>
+
+      </h1>
+
+    </div>
+
+
+
+    <div class="ui grid">
+      <app-forum *ngFor="let forum of forums" [forum]="forum"></app-forum>
+    </div>
+
+  </div>

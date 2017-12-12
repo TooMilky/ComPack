@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+<br>
+
+    <div class="ui container">
+
+        <div class="image">
+            <img [src]="forum?.photoUrl">
+        </div>
+
+        <h3><b>Title:</b> {{forum.title}}</h3>
+        <h3>by {{forum.byUser}}</h3>
+
+        <br>
+
+        <h3><b>Price:</b> {{forum.price}}</h3>
+
+
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><b>Description</b></h3>
+        <p>{{forum.description}}</p>
+
+    </div>

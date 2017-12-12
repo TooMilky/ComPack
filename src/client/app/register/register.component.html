@@ -1,0 +1,16 @@
+<div class="register-container">
+
+  <form class="ui big form" #registerForm="ngForm" (submit)="onSubmit(registerForm)">
+  <div class="field">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username" ngModel>
+  </div>
+
+  <div class="field">
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password" ngModel>
+  </div>
+
+  <button type="submit" class="ui primary button float right floated">Register</button>
+  </form>
+</div>
